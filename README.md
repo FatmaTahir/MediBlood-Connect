@@ -1,10 +1,10 @@
-# 🩸Blood Donation Management System
+# Blood Donation Management System
 
 A modern **ASP.NET MVC web application** developed to streamline the blood donation process by connecting **Blood Donors and Patients ** on one platform. The system helps manage blood requests, donation requests, donor availability, stock alerts, and request approvals efficiently.
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 The **Blood Donation Management System** is designed to reduce delays in blood availability during emergencies. It provides a secure and user-friendly environment where:
 
@@ -14,7 +14,7 @@ The **Blood Donation Management System** is designed to reduce delays in blood a
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 ### Backend
 - ASP.NET Core MVC  
@@ -44,11 +44,11 @@ The **Blood Donation Management System** is designed to reduce delays in blood a
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 ---
 
-## 👤 Donor Module
+##  Donor Module
 
 Registered donors can:
 
@@ -62,7 +62,7 @@ Registered donors can:
 
 ---
 
-## 🩺 Patient Module
+##  Patient Module
 
 Patients can:
 
@@ -76,7 +76,7 @@ Patients can:
 
 ---
 
-## 🛡️ Admin Module
+##  Admin Module
 
 Admin has complete control to:
 
@@ -92,18 +92,18 @@ Admin has complete control to:
 
 ---
 
-## ⚡ Advanced Features
+##  Advanced Features
 
-### 🔄 AJAX Integration
+###  AJAX Integration
 Used for faster page updates without full reloads.
 
-### 📡 SignalR
+###  SignalR
 Used for real-time notifications and instant updates.
 
-### 🔐 Identity + Policy Authorization
+###  Identity + Policy Authorization
 Secure authentication with role-based access control.
 
-### 🧪 Integration Tests
+###  Integration Tests
 Includes testing project for validating system functionality.
 
 ---
