@@ -1,5 +1,4 @@
-# Blood Donation Management System
-
+# Medi-Blood Connect 
 A modern **ASP.NET MVC web application** developed to streamline the blood donation process by connecting **Blood Donors and Patients ** on one platform. The system helps manage blood requests, donation requests, donor availability, stock alerts, and request approvals efficiently.
 
 ---
