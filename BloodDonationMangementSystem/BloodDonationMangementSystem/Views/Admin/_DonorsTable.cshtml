@@ -1,0 +1,38 @@
+﻿@model List<BloodDonationManagementSystem.Models.User>
+<tbody>
+    @if (Model != null && Model.Any())
+    {
+        int count = 1;
+
+        foreach (var donor in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@donor.FullName</td>
+                <td>@donor.Age</td>
+                <td>@donor.BloodGroup</td>
+                <td>@donor.Contact</td>
+                <td>
+                    @if (donor.Availability)
+                    {
+                        <span class="badge bg-secondary">Available</span>
+                    }
+                    else
+                    {
+                        <span class="badge " style="color:white; background: linear-gradient(135deg, #7a0c1a, #b11226);
+            ">Not Available</span>
+                    }
+                </td>
+               
+            </tr>
+
+            count++;
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="7" class="text-center text-danger">No donors found</td>
+        </tr>
+    }
+</tbody>

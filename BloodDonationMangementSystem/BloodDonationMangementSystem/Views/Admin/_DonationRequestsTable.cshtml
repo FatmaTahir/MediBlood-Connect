@@ -1,0 +1,43 @@
+﻿@model List<BloodDonationManagementSystem.Models.DonationRequest>
+
+@if (Model != null && Model.Any())
+{
+    int count = 1;
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@count</td>
+            <td>@item.FullName</td>
+            <td>@item.BloodGroup</td>
+            <td>
+                <span class="badge
+                          @(item.Status == "Pending" ? "bg-warning text-dark" :
+                            item.Status == "Approved" ? "bg-success" : item.Status == "Rejected" ? "bg-danger" : "bg-secondary")">
+            @item.Status
+            </td>
+            <td>
+               
+
+                <form asp-action="ApproveDonation" asp-controller="Admin" method="post" class="d-inline">
+                    <input type="hidden" name="requestId" value="@item.DonationId" />
+                    <button type="submit" class="btn btn-sm btn-warning">Approve</button>
+                </form>
+                <a asp-controller="Admin" asp-action="ViewSpecificDonation"
+                   asp-route-id="@item.DonationId"
+                   class="btn btn-sm btn-secondary text-white">View</a>
+                <form asp-action="RejectDonation" asp-controller="Admin" method="post" class="d-inline">
+                    <input type="hidden" name="requestId" value="@item.DonationId" />
+                    <button type="submit" class="btn btn-sm btn-danger">Reject</button>
+                </form>
+
+            </td>
+        </tr>
+        count++;
+    }
+}
+else
+{
+    <tr>
+        <td colspan="5" class="text-center text-muted">No donation requests found</td>
+    </tr>
+}

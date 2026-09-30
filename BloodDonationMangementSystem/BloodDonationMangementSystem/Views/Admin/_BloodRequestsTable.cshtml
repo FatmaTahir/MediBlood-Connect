@@ -1,0 +1,51 @@
+﻿@model List<BloodDonationManagementSystem.Models.BloodRequest>
+<tbody>
+    @if (Model != null && Model.Any())
+    {
+        int count = 1;
+        foreach (var r in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@r.PatientName</td>
+                <td>@r.BloodGroup</td>
+                <td>@r.Reason</td>
+                <td>@r.UnitsRequired</td>
+                <td>@r.Urgency</td>
+                <td>
+                    <span class="badge
+                  @(r.Status == "Pending" ? "bg-warning text-dark" :
+      r.Status == "Approved" ? "bg-success" : r.Status == "Rejected" ? "bg-danger" : "bg-secondary")">
+                  @r.Status
+  </span>
+        </td>
+        <td>
+            <form asp-action="ApproveBloodRequest" asp-controller="Admin" method="post" class="d-inline">
+                <input type="hidden" name="requestId" value="@r.BloodRequestId" />
+                <button class="btn btn-secondary btn-sm">Approve</button>
+            </form>
+
+                    <form asp-action="RejectBloodRequest" asp-controller="Admin" method="post" class="d-inline">
+                        <input type="hidden" name="requestId" value="@r.BloodRequestId" />
+                        <button class="btn btn-sm" style="color:white; background: linear-gradient(135deg, #7a0c1a, #b11226);
+        ">
+                            Reject
+                        </button>
+                    </form>
+
+                    @* <a asp-action="ViewRequest" asp-route-id="@r.BloodRequestId"
+                       class="btn btn-info btn-sm">View</a> *@
+                </td>
+            </tr>
+        count++;
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="8" class="text-center text-muted ">
+                No blood requests found
+            </td>
+        </tr>
+    }
+</tbody>

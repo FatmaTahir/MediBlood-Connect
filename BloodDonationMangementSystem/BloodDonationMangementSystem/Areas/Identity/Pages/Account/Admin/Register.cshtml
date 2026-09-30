@@ -1,0 +1,37 @@
+﻿@page
+@model BloodDonationManagementSystem.Areas.Identity.Pages.Account.Admin.AdminRegisterModel
+
+
+<h1 class="row justify-content-center">Register</h1>
+
+<div class="row justify-content-center">
+    <div class="container text-center mt-0 pt-5 d-flex justify-content-center border border-light-subtle" style="width:600px; height:440px">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="mt-0">
+            @* <h2>Create a new Account</h2> *@
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+ 
+            <div >
+                    <input asp-for="Input.Email" placeholder="Your Email" class="form-control " autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            
+            <div class="d-flex flex-row mb-1 mt-3 gap-5">
+
+            <div >
+                    <input asp-for="Input.Password" placeholder="Password" class="form-control " autocomplete="new-password" aria-required="true" placeholder="password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div >
+                    <input asp-for="Input.ConfirmPassword" placeholder="Confirm Password" class="form-control " autocomplete="new-password" aria-required="true" placeholder="password" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn  btn-danger mt-3">Register</button>
+        </form>
+    </div>
+  
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

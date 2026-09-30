@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BloodDonationMangementSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BloodDonationMangementSystem.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark  box-shadow mb-1" style="height:75px;">
+            <div class="container-fluid">
+                <div class="navbar-brand fw-bold" >
+                    <i class="bi bi-droplet-fill text-danger fs-3 me-5">
+                        <span class="text-light ">Medi</span><span class="text-danger fs-3">Blood</span><span class="text-light fs-3">Connect</span>
+
+                   </i>
+
+                </div>
+               
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light  me-5   ms-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">About</a>
+                        </li>
+                        @* <li class="nav-item">
+                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">Services</a>
+                        </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">How It Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">Contact Us</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <a class="btn btn-outline-danger text-light me-5" asp-area="Identity"
+                   asp-page="/Account/Admin/Login">
+                    Admin Login
+                </a>
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5 w-100" style="position:absolute;top:1500px;">
+        <div class="container-fluid px-5">
+            <div class="row">
+
+               
+                <div class="col-md-4 mb-4">
+                    <h4 class="fw-bold">
+                        <i class="bi bi-droplet-fill text-danger me-2"></i>
+                        Medi<span class="text-danger">Blood</span>Connect
+                    </h4>
+                    <p class="text-light mt-3">
+                        MediBlood Connect connects blood donors with patients quickly
+                        and reliably, helping save lives when every second matters.
+                    </p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a asp-controller="Home" asp-action="Index" class="text-light text-decoration-none">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="About" class="text-light text-decoration-none">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="Privacy" class="text-light text-decoration-none">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a asp-area="Identity" asp-page="/Account/Login" class="text-light text-decoration-none">Donate Blood</a></li>
+                        <li><a asp-area="Identity" asp-page="/Account/Patient/Login" class="text-light text-decoration-none">Request Blood</a></li>
+                        <li><a asp-controller="Home" asp-action="HowItWorks" class="text-light text-decoration-none">How It Works</a></li>
+                        <li><a asp-area="Identity" asp-page="/Account/Admin/Login" class="text-light text-decoration-none">Admin Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill text-danger me-2"></i> Punjab, Pakistan</li>
+                        <li><i class="bi bi-telephone-fill text-danger me-2"></i> +92 300 1234567</li>
+                        <li><i class="bi bi-envelope-fill text-danger me-2"></i> support@medibloodconnect.com</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="border-secondary">
+
+            <div class="text-center text-muted">
+                © 2025 MediBloodConnect. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
