@@ -1,0 +1,445 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\donationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\donationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\repositories\\donorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\repositories\\donorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\controllers\\donorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\controllers\\donorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\data\\blooddonationmanagementsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\data\\blooddonationmanagementsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93657238-1BB6-48E6-AFC8-06F5A13588E1}|Tests\\Tests.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\tests\\integrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93657238-1BB6-48E6-AFC8-06F5A13588E1}|Tests\\Tests.csproj|solutionrelative:tests\\integrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\admin\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\admin\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\patient\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\patient\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\patient\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\patient\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\donor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\donor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\bloodrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\models\\admindashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\models\\admindashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|c:\\users\\hp\\documents\\github\\mediblood-connect\\blooddonationmangementsystem\\blooddonationmangementsystem\\views\\shared\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E834B8F7-D6D8-4E48-BA95-359CA79D20CA}|BloodDonationMangementSystem\\BloodDonationMangementSystem.csproj|solutionrelative:blooddonationmangementsystem\\views\\shared\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20261004160246_SetRequestDate.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Migrations\\20261004160246_SetRequestDate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T16:02:46.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20261004153826_AddDonationAndBloodRequestTables.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Migrations\\20261004153826_AddDonationAndBloodRequestTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T15:38:26.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DonorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Repositories\\DonorRepository.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Repositories\\DonorRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Repositories\\DonorRepository.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Repositories\\DonorRepository.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAuwEUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:38:19.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DonationRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\DonationRequest.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\DonationRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\DonationRequest.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\DonationRequest.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAWwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T13:57:05.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DonorController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Controllers\\DonorController.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Controllers\\DonorController.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Controllers\\DonorController.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Controllers\\DonorController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAADwv3wAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:46:00.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BloodDonationManagementSystemContext.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Data\\BloodDonationManagementSystemContext.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Data\\BloodDonationManagementSystemContext.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Data\\BloodDonationManagementSystemContext.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Data\\BloodDonationManagementSystemContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T15:28:25.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IntegrationTest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\Tests\\IntegrationTest.cs",
+              "RelativeDocumentMoniker": "Tests\\IntegrationTest.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\Tests\\IntegrationTest.cs",
+              "RelativeToolTip": "Tests\\IntegrationTest.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAmwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:54:13.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Program.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Program.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAiwGwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:43:08.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20261004143402_UpdateTables.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Migrations\\20261004143402_UpdateTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:34:02.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Login.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Login.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Login.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Login.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAiwFIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T14:31:38.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Register.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Register.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Register.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Patient\\Register.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwH8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T14:28:19.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Login.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Login.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Login.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Login.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAIwEcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T14:26:18.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAiwG4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T14:22:41.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\appsettings.json",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\appsettings.json",
+              "RelativeToolTip": "BloodDonationMangementSystem\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-04T10:10:07.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T14:23:41.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Register.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Register.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Register.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Areas\\Identity\\Pages\\Account\\Admin\\Register.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T10:20:53.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20261004141146_ModalAdjustments.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Migrations\\20261004141146_ModalAdjustments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T14:11:46.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BloodRequest.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\BloodRequest.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\BloodRequest.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\BloodRequest.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\BloodRequest.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA5wBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T13:57:21.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\Patient.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T13:14:53.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Donor.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\Donor.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\Donor.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\Donor.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\Donor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T10:32:19.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\User.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwAwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T10:32:12.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\EmailSender.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\EmailSender.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\EmailSender.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\EmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T13:57:33.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AdminDashboardVM.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\AdminDashboardVM.cs",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Models\\AdminDashboardVM.cs",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Models\\AdminDashboardVM.cs",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Models\\AdminDashboardVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T13:57:27.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswEYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T09:50:38.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HomePage.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Views\\Shared\\HomePage.cshtml",
+              "RelativeDocumentMoniker": "BloodDonationMangementSystem\\Views\\Shared\\HomePage.cshtml",
+              "ToolTip": "C:\\Users\\hp\\Documents\\GitHub\\MediBlood-Connect\\BloodDonationMangementSystem\\BloodDonationMangementSystem\\Views\\Shared\\HomePage.cshtml",
+              "RelativeToolTip": "BloodDonationMangementSystem\\Views\\Shared\\HomePage.cshtml",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAAIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-04T09:27:38.79Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

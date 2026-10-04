@@ -1,0 +1,128 @@
+﻿@page
+@model BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient.PatientRegisterModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Registration - MediBlood Connect</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Site CSS -->
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body class="bg-light">
+    <div class="container py-3 mt-0">
+        <div class="row justify-content-center mt-0">
+
+            <div class="col-md-6 col-lg-5">
+
+                <div class="card shadow-lg border-0 mt-0">
+                    <div class="card-body p-4">
+
+                        <h3 class="text-center text-danger fw-bold mb-2">
+                            Patient Registration
+                        </h3>
+                        <p class="text-center text-muted mb-4">
+                            Create your MediBlood Connect account
+                        </p>
+
+                        <form id="registerForm"
+                              asp-route-returnUrl="@Model.ReturnUrl"
+                              method="post">
+
+                            <div asp-validation-summary="All"
+                                 class="text-danger mb-3"
+                                 role="alert"></div>
+
+                            <!-- Full Name & Age -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.FullName" class="form-label">Full Name</label>
+                                    <input asp-for="Input.FullName"
+                                           class="form-control"
+                                           placeholder="Enter full name" />
+                                    <span asp-validation-for="Input.FullName"
+                                          class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Age" class="form-label">Age</label>
+                                    <input asp-for="Input.Age"
+                                           class="form-control"
+                                           placeholder="Enter age" min="18" />
+                                    <span asp-validation-for="Input.Age"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label asp-for="Input.Email" class="form-label">Email Address</label>
+                                    <input asp-for="Input.Email"
+                                           class="form-control"
+                                           autocomplete="username"
+                                           placeholder="name@example.com" />
+                                    <span asp-validation-for="Input.Email"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Password & Confirm Password -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Password" class="form-label">Password</label>
+                                    <input asp-for="Input.Password"
+                                           class="form-control"
+                                           autocomplete="new-password"
+                                           placeholder="Enter password" />
+                                    <span asp-validation-for="Input.Password"
+                                          class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input asp-for="Input.ConfirmPassword"
+                                           class="form-control"
+                                           autocomplete="new-password"
+                                           placeholder="Confirm password" />
+                                    <span asp-validation-for="Input.ConfirmPassword"
+                                          class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button id="registerSubmit"
+                                    type="submit"
+                                    class="btn btn-danger w-100 fw-bold py-2">
+                                Register
+                            </button>
+
+                            <!-- Login Link -->
+                            <div class="text-center mt-3">
+                                <a asp-page="./Login"
+                                   asp-route-returnUrl="@Model.ReturnUrl"
+                                   class="text-danger fw-semibold text-decoration-underline">
+                                    Already have an account? Log in
+                                </a>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Included jQuery & Validation Scripts directly since Layout is set to null -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

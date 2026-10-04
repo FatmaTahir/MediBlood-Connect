@@ -1,0 +1,83 @@
+﻿@page
+@model BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient.PatientLoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Login - MediBlood Connect</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Site CSS -->
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body class="bg-light">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-4">
+        <div class="col-md-5 col-lg-4">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold text-danger">Patient Login</h3>
+                        <p class="text-muted mb-0">
+                            Access your MediBlood Connect account
+                        </p>
+                    </div>
+
+                    <form id="account" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3" role="alert"></div>
+
+                        <!-- Email Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email"
+                                   class="form-control"
+                                   autocomplete="username"
+                                   placeholder="name@example.com" />
+                            <label asp-for="Input.Email">Email address</label>
+                            <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password"
+                                   class="form-control"
+                                   autocomplete="current-password"
+                                   placeholder="password" />
+                            <label asp-for="Input.Password">Password</label>
+                            <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button id="login-submit"
+                                type="submit"
+                                class="btn btn-danger w-100 py-2 fw-semibold">
+                            Log in
+                        </button>
+
+                        <!-- Navigation Link -->
+                        <div class="text-center mt-3">
+                            <a asp-page="./PatientRegister"
+                               asp-route-returnUrl="@Model.ReturnUrl"
+                               class="text-danger fw-semibold text-decoration-underline">
+                                Don’t have an account? Register
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Included jQuery & Validation Scripts directly since Layout is set to null -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

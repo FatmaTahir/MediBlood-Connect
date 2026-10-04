@@ -1,0 +1,170 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Registration - MediBlood Connect</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-4">
+
+                        <h3 class="text-center text-danger fw-bold mb-2">
+                            Register as Donor
+                        </h3>
+                        <p class="text-center text-muted mb-4">
+                            Create your MediBlood Connect account
+                        </p>
+
+                        <form id="registerForm"
+                              asp-route-returnUrl="@Model.ReturnUrl"
+                              method="post">
+
+                            <div asp-validation-summary="ModelOnly"
+                                 class="text-danger mb-3"
+                                 role="alert"></div>
+
+                            <!-- Full Name & Age -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.FullName" class="form-label">Full Name</label>
+                                    <input asp-for="Input.FullName"
+                                           class="form-control"
+                                           placeholder="Enter full name" />
+                                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Age" class="form-label">Age</label>
+                                    <input asp-for="Input.Age"
+                                           class="form-control"
+                                           placeholder="Enter age" min="18" max="65" />
+                                    <span asp-validation-for="Input.Age" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- CNIC & Contact -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.CNIC" class="form-label">CNIC (13 Digits)</label>
+                                    <input asp-for="Input.CNIC"
+                                           class="form-control"
+                                           placeholder="3420112345671"
+                                           pattern="\d{13}"
+                                           title="CNIC must be exactly 13 digits without dashes" />
+                                    <span asp-validation-for="Input.CNIC" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Contact" class="form-label">Contact Number</label>
+                                    <input asp-for="Input.Contact"
+                                           class="form-control"
+                                           placeholder="03XXXXXXXXX"
+                                           pattern="03\d{9}"
+                                           title="Phone number must start with 03 and contain 11 digits" />
+                                    <span asp-validation-for="Input.Contact" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Blood Group & Availability -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.BloodGroup" class="form-label">Blood Group</label>
+                                    <select asp-for="Input.BloodGroup" class="form-select">
+                                        <option value="" disabled selected>Select blood group</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                    <span asp-validation-for="Input.BloodGroup" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Availability" class="form-label">Available for Donation</label>
+                                    <select asp-for="Input.Availability" class="form-select">
+                                        <option value="" disabled selected>Select availability</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                    <span asp-validation-for="Input.Availability" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label asp-for="Input.Email" class="form-label">Email Address</label>
+                                    <input asp-for="Input.Email"
+                                           class="form-control"
+                                           autocomplete="username"
+                                           placeholder="name@example.com" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Password & Confirm Password -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label asp-for="Input.Password" class="form-label">Password</label>
+                                    <input asp-for="Input.Password"
+                                           class="form-control"
+                                           autocomplete="new-password"
+                                           placeholder="Enter password" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input asp-for="Input.ConfirmPassword"
+                                           class="form-control"
+                                           autocomplete="new-password"
+                                           placeholder="Confirm password" />
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <button id="registerSubmit"
+                                    type="submit"
+                                    class="btn btn-danger w-100 py-2 fw-bold">
+                                Register
+                            </button>
+
+                            <div class="text-center mt-3">
+                                <a asp-page="./Login"
+                                   asp-route-returnUrl="@Model.ReturnUrl"
+                                   class="text-danger fw-semibold text-decoration-underline">
+                                    Already have an account? Log in
+                                </a>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Included jQuery & Validation Scripts directly since Layout is set to null -->
+    <script src="~/lib/jquery/dist/jquery.min.jquery.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>
