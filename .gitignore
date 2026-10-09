@@ -1,3 +1,6 @@
-.vs/ 
-bin/ 
-obj/ 
+.vs/
+*.db
+*.vsidx
+*.dtbcache.v2
+bin/
+obj/
