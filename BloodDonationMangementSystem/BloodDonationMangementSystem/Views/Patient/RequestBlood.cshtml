@@ -2,115 +2,270 @@
 @{
     Layout = null;
 }
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Blood - MediBloodConnect</title>
 
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #121417;
+            --card-dark: #1e2228;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-red: #e63946;
+            --primary-red-hover: #c92a37;
+            --accent-glow: rgba(230, 57, 70, 0.25);
+            --text-muted: #9fa6ad;
+            --input-bg: rgba(255, 255, 255, 0.04);
+        }
+
+        html, body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar-custom {
+            background-color: #16191d;
+            border-bottom: 1px solid var(--card-border);
+            height: 64px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .glass-card {
+            background-color: var(--card-dark);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-control-custom, .form-select-custom {
+            background-color: var(--input-bg);
+            border: 1px solid var(--card-border);
+            color: #f8f9fa !important;
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+            .form-control-custom:focus, .form-select-custom:focus {
+                background-color: rgba(255, 255, 255, 0.07);
+                border-color: var(--primary-red);
+                box-shadow: 0 0 0 0.2rem var(--accent-glow);
+                color: #fff !important;
+                outline: none;
+            }
+
+            .form-control-custom::placeholder {
+                color: var(--text-muted);
+                opacity: 0.7;
+            }
+
+            .form-select-custom option {
+                background-color: #1e2228;
+                color: #f8f9fa;
+            }
+
+        .fs-7 {
+            font-size: 0.75rem;
+        }
+
+        .btn-red-accent {
+            background-color: var(--primary-red);
+            color: #fff !important;
+            border: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 0.45rem 1.15rem;
+            transition: all 0.2s;
+        }
+
+            .btn-red-accent:hover {
+                background-color: var(--primary-red-hover);
+                color: #fff !important;
+                box-shadow: 0 3px 10px var(--accent-glow);
+            }
+
+        .btn-outline-custom {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: #e2e8f0 !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 0.45rem 1.15rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+            .btn-outline-custom:hover {
+                background-color: rgba(255, 255, 255, 0.05);
+                color: #fff !important;
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+    </style>
 </head>
+<body>
 
-<body class="m-0 p-0 bg-light">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark  box-shadow mb-1" style="height:75px;">
-            <div class="container-fluid">
-                <div class="navbar-brand fw-bold">
-                    <i class="bi bi-droplet-fill text-danger fs-3 me-5">
-                        <span class="text-light ">Medi</span><span class="text-danger fs-3">Blood</span><span class="text-light fs-3">Connect</span>
+    <div class="page-wrapper">
+        <!-- Header / Navbar -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom px-3">
+                <div class="container-fluid">
+                    <a class="brand-logo d-flex align-items-center gap-2" asp-controller="Patient" asp-action="Dashboard">
+                        <i class="bi bi-droplet-fill text-danger fs-5"></i>
+                        <span>Medi<span class="text-danger">Blood</span>Connect</span>
+                    </a>
 
-                    </i>
+                    <button class="navbar-toggler py-0 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 small">
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="Dashboard">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="MyRequests">My Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="RequestBlood">Request Blood</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="ViewMatchingDonors">Matching Donors</a>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-outline-danger btn-sm px-2 py-1 fs-7" asp-area="Identity"
+                               asp-page="/Account/Patient/Login">
+                                <i class="bi bi-box-arrow-right me-1"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="glass-card p-3 p-md-4">
+
+                <!-- Page Title Header -->
+                <div class="text-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center gap-1 text-danger fw-semibold fs-7 mb-1">
+                        <i class="bi bi-heart-pulse-fill"></i> RECIPIENT PORTAL
+                    </div>
+                    <p class="text-secondary small mb-0">Fill out the form below to submit a blood request.</p>
                 </div>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light  me-5   ms-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">About</a>
-                        </li>
+                <form asp-controller="Patient" asp-action="RequestBlood" method="post" class="m-0">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">How It Works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">Contact Us</a>
-                        </li>
+                    <!-- Top 2x2 Field Grid -->
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label text-light fw-medium fs-7 mb-1">
+                                Blood Group
+                            </label>
+                            <select name="BloodGroup" class="form-select form-select-custom" required>
+                                <option value="">Choose Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
 
-                    </ul>
-                </div>
-                <a class="btn btn-outline-danger  me-5" asp-area="Identity"
-                   asp-page="/Account/Admin/Login">
-                    Admin Login
-                </a>
+                        <div class="col-md-6">
+                            <label class="form-label text-light fw-medium fs-7 mb-1">
+                                Patient Name
+                            </label>
+                            <input type="text" name="PatientName" class="form-control form-control-custom" placeholder="Full Name" required />
+                        </div>
 
+                        <div class="col-md-6">
+                            <label class="form-label text-light fw-medium fs-7 mb-1">
+                                Units Required
+                            </label>
+                            <input type="number" name="UnitsRequired" class="form-control form-control-custom" placeholder="e.g. 2" min="1" max="5" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label text-light fw-medium fs-7 mb-1">
+                                Urgency
+                            </label>
+                            <select name="Urgency" class="form-select form-select-custom" required>
+                                <option value="">Select Urgency</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Reason Input -->
+                    <div class="mb-3">
+                        <label class="form-label text-light fw-medium fs-7 mb-1">
+                            <i class="bi bi-pencil-square me-1 text-danger"></i> Reason for Request
+                        </label>
+                        <textarea name="Reason" class="form-control form-control-custom" placeholder="Please state the medical reason or clinical requirement..." rows="3" required></textarea>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex align-items-center justify-content-end gap-2 pt-1">
+                        <a asp-controller="Patient" asp-action="Dashboard" class="btn btn-outline-custom">Cancel</a>
+                        <button type="submit" class="btn btn-red-accent d-inline-flex align-items-center gap-2">
+                            <i class="bi bi-send-fill fs-7"></i> Submit Request
+                        </button>
+                    </div>
+
+                </form>
             </div>
-        </nav>
-    </header>
-    <div class="d-flex m-0 p-0">
-        <div class="flex-grow-1 p-4">
+        </main>
+    </div>
 
-            <h1 class="mb-4 ms-5 fw-bold">Request Blood</h1>
-            <p class="text-secondary  mb-4 ms-5 ">Fill the form below to submit a blood request.</p>
-
-            <form asp-controller="Patient" asp-action="RequestBlood" method="post" class="w-100 mt-3 p-4 border border-light-subtle rounded" style="max-width: 900px; margin-left: 20px;">
-
-                <div class="d-flex flex-row gap-3 mb-3">
-
-                    <div class="w-100">
-                        <select name="BloodGroup" class="form-select" required>
-                            <option value="">Choose Blood Group</option>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </div>
-                    <div class="w-100">
-                        <input type="text" name="PatientName" class="form-control"
-                               placeholder="Patient Name" required />
-                    </div>
-                    @* <div class="w-100">
-                        <input type="email" name="PatientEmail" class="form-control"
-                               placeholder="Patient Email" required />
-                    </div> *@
-
-                    <div class="w-100">
-                        <input type="number" name="UnitsRequired" class="form-control"
-                               placeholder="Units Required" min="1" max="5" required />
-                    </div>
-
-                    <div class="w-100">
-                        <select name="Urgency" class="form-select" required>
-                            <option value="">Urgency</option>
-                            <option value="Normal">Normal</option>
-                            <option value="Urgent">Urgent</option>
-                            <option value="Critical">Critical</option>
-                        </select>
-                    </div>
-
-                </div>
-                <div class="mb-4">
-                    <textarea name="Reason"  class="form-control"  placeholder="Reason for blood request..."  rows="3"  required></textarea>
-                </div>
-
-                <div class=" text-center me-5">
-                    <button class="btn btn-danger" style="width:160px; height:35px;">Submit</button>
-                </div>
-
-            </form>
-           
-            </div>
-
-        </div>
-
-   
-
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

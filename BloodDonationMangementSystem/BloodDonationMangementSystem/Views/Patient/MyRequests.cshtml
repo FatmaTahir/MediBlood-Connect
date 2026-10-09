@@ -2,130 +2,319 @@
 @{
     Layout = null;
 }
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Requests - MediBloodConnect</title>
 
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #121417;
+            --card-dark: #1e2228;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-red: #e63946;
+            --primary-red-hover: #c92a37;
+            --accent-glow: rgba(230, 57, 70, 0.25);
+            --text-muted: #9fa6ad;
+        }
+
+        html, body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar-custom {
+            background-color: #16191d;
+            border-bottom: 1px solid var(--card-border);
+            height: 52px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Top-center alignment */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        /* Wider rectangular card shape */
+        .glass-card {
+            background-color: var(--card-dark);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .table-custom {
+            --bs-table-bg: transparent;
+            --bs-table-color: #f8f9fa;
+            --bs-table-border-color: rgba(255, 255, 255, 0.06);
+            margin-bottom: 0;
+        }
+
+            .table-custom th {
+                color: #fff;
+                font-weight: 600;
+                font-size: 0.875rem;
+                border-bottom: 1px solid var(--card-border);
+                padding-bottom: 0.75rem;
+            }
+
+            .table-custom td {
+                padding: 0.85rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+        .badge-status {
+            font-weight: 600;
+            padding: 0.35em 0.75em;
+            font-size: 0.75rem;
+            border-radius: 6px;
+        }
+
+        .badge-pending {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .badge-approved {
+            background-color: #198754;
+            color: #fff;
+        }
+
+        .badge-rejected {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .badge-blood {
+            background-color: #e63946;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.3em 0.6em;
+            border-radius: 4px;
+        }
+
+        .badge-urgency-high {
+            color: #ff6b6b;
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            padding: 0.25em 0.6em;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .badge-urgency-normal {
+            color: #9fa6ad;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.25em 0.6em;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 0.45rem 1.15rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+            .btn-outline-custom:hover {
+                background-color: rgba(255, 255, 255, 0.05);
+                color: #fff;
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+        .btn-primary-custom {
+            background-color: var(--primary-red);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 0.45rem 1.15rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+            .btn-primary-custom:hover {
+                background-color: var(--primary-red-hover);
+                color: #fff;
+            }
+    </style>
 </head>
+<body>
 
-<body class="m-0 p-0 bg-light">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark  box-shadow mb-1" style="height:75px;">
-            <div class="container-fluid">
-                <div class="navbar-brand fw-bold">
-                    <i class="bi bi-droplet-fill text-danger fs-3 me-5">
-                        <span class="text-light ">Medi</span><span class="text-danger fs-3">Blood</span><span class="text-light fs-3">Connect</span>
+    <div class="page-wrapper">
+        <!-- Header / Navbar -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom px-3">
+                <div class="container-fluid">
+                    <a class="brand-logo d-flex align-items-center gap-2" asp-controller="Patient" asp-action="Dashboard">
+                        <i class="bi bi-droplet-fill text-danger fs-5"></i>
+                        <span>Medi<span class="text-danger">Blood</span>Connect</span>
+                    </a>
 
-                    </i>
+                    <button class="navbar-toggler py-0 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 small">
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="Dashboard">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="MyRequests">My Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="RequestBlood">Request Blood</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light py-0" asp-controller="Patient" asp-action="ViewMatchingDonors">Matching Donors</a>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-outline-danger btn-sm px-2 py-1 fs-7" asp-area="Identity"
+                               asp-page="/Account/Patient/Login">
+                                <i class="bi bi-box-arrow-right me-1"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content (Top-Centered Glass Card) -->
+        <main class="main-content">
+            <div class="glass-card p-4">
+
+                <!-- Page Title Header -->
+                <div class="text-center mb-4">
+                    <div class="d-flex align-items-center justify-content-center gap-1 text-danger fw-semibold fs-7 mb-1">
+                        <i class="bi bi-heart-pulse-fill"></i> RECIPIENT PORTAL
+                    </div>
+                    <p class="text-secondary small mb-0">Here is the current status of your submitted blood requests.</p>
                 </div>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light  me-5   ms-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">How It Works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">Contact Us</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <a class="btn btn-outline-danger  me-5" asp-area="Identity"
-                   asp-page="/Account/Admin/Login">
-                    Admin Login
-                </a>
-
-            </div>
-        </nav>
-    </header>
-@if (Model == null || !Model.Any())
-{
-    <div class="alert alert-info">
-        You have not submitted any donation request yet!
-    </div>
-}
-else
-{      
-
-       <div class="m-0 p-0 bg-light">
-
-        <div class="d-flex m-0 p-0">
-
-            <div class="flex-grow-1 p-4">
-
-                <h2 class="fw-bold mb-3">My Requests</h2>
-                <p class="text-secondary mb-4">Below are  the blood requests you have submitted.</p>
-
-                <table class="table table-bordered table-striped mt-3">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Patient Name</th>
-                            <th>Blood Group</th>
-                            <th>Units Required</th>
-                            <th>Reason</th>
-                            <th>Urgency Level</th>
-                            <th>Status</th>
-
-                        </tr>
-                    </thead>
-
-
-                    <tbody>
-                        @if (Model != null || Model.Any())
-                        {
-                            int count = 1;
-                            @foreach (var v in Model)
-                            {
+                @if (Model == null || !Model.Any())
+                {
+                    <div class="alert alert-dark border border-secondary text-secondary text-center small my-4 py-3">
+                        <i class="bi bi-info-circle me-1"></i> You have not submitted any blood requests yet.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive mb-4">
+                        <table class="table table-custom align-middle">
+                            <thead>
                                 <tr>
-                                    <td>@count</td>
-                                    <td>@v.PatientName</td>
-                                    <td>@v.BloodGroup</td>
-                                    <td>@v.UnitsRequired</td>
-                                    <td>@v.Reason</td>
-                                    <td>@v.Urgency</td>
-                                    <td>
-                                        @if (v.Status == "Pending")
-                                        {
-                                            <span class="fw-bold badge bg-warning text-dark">@v.Status</span>
-                                        }
-                                        else if (v.Status == "Approved")
-                                        {
-                                            <span class="fw-bold badge bg-success text-white">@v.Status</span>
-                                        }
-                                        else if (v.Status == "Rejected")
-                                        {
-                                            <span class="fw-bold badge bg-danger text-white">@v.Status</span>
-                                        }
-                                    </td>
+                                    <th>Patient Name</th>
+                                    <th>Blood Group</th>
+                                    <th>Units</th>
+                                    <th>Reason</th>
+                                    <th>Urgency</th>
+                                    <th class="text-end">Status</th>
                                 </tr>
-                                count++;
-                            }
-                        }
+                            </thead>
+                            <tbody>
+                                @foreach (var v in Model)
+                                {
+                                    <tr>
+                                        <td class="text-light">
+                                            @v.PatientName
+                                        </td>
+                                        <td>
+                                            <span class="badge-blood">@v.BloodGroup</span>
+                                        </td>
+                                        <td class="text-light">
+                                            @v.UnitsRequired
+                                        </td>
+                                        <td class="text-secondary">
+                                            @v.Reason
+                                        </td>
+                                        <td>
+                                            @if (string.Equals(v.Urgency, "High", StringComparison.OrdinalIgnoreCase) || string.Equals(v.Urgency, "Critical", StringComparison.OrdinalIgnoreCase) || string.Equals(v.Urgency, "Urgent", StringComparison.OrdinalIgnoreCase))
+                                            {
+                                                <span class="badge-urgency-high">@v.Urgency</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge-urgency-normal">@v.Urgency</span>
+                                            }
+                                        </td>
+                                        <td class="text-end">
+                                            @if (string.Equals(v.Status, "approved", StringComparison.OrdinalIgnoreCase))
+                                            {
+                                                <span class="badge badge-status badge-approved">Approved</span>
+                                            }
+                                            else if (string.Equals(v.Status, "rejected", StringComparison.OrdinalIgnoreCase))
+                                            {
+                                                <span class="badge badge-status badge-rejected">Rejected</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-status badge-pending">Pending</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
 
-                    </tbody>
-
-
-
-                </table>
+                <!-- Action Buttons -->
+                <div class="d-flex align-items-center justify-content-between pt-1">
+                    <a asp-controller="Patient" asp-action="Dashboard" class="btn btn-outline-custom">
+                        <i class="bi bi-arrow-left me-1"></i> Back to Dashboard
+                    </a>
+                    <a asp-controller="Patient" asp-action="RequestBlood" class="btn btn-primary-custom">
+                        <i class="bi bi-plus-lg me-1"></i> New Request
+                    </a>
+                </div>
 
             </div>
-
-        </div>
-
+        </main>
     </div>
-    }
-    </body>
-    </html>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

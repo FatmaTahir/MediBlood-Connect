@@ -1,6 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-#nullable disable
+﻿#nullable disable
 
 using BloodDonationManagementSystem.Models;
 using Microsoft.AspNetCore.Authentication;
@@ -23,20 +21,21 @@ using System.Threading.Tasks;
 
 namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
 {
+    [AllowAnonymous]
     public class PatientRegisterModel : PageModel
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly IUserStore<User> _userStore;
         private readonly IUserEmailStore<User> _emailStore;
-        private readonly ILogger<RegisterModel> _logger;
+        private readonly ILogger<PatientRegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public PatientRegisterModel(
             UserManager<User> userManager,
             IUserStore<User> userStore,
             SignInManager<User> signInManager,
-            ILogger<RegisterModel> logger,
+            ILogger<PatientRegisterModel> logger,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -47,33 +46,25 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
             _emailSender = emailSender;
         }
 
-       
         [BindProperty]
         public InputModel Input { get; set; }
 
-        
         public string ReturnUrl { get; set; }
 
-       
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        
         public class InputModel
         {
-            
             [Required(ErrorMessage = "This field is required")]
             public string FullName { get; set; }
 
             [Required(ErrorMessage = "This field is required")]
             public int Age { get; set; }
 
-           
-
             [Required(ErrorMessage = "This field is required")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-
 
             [Required(ErrorMessage = "This field is required")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -88,7 +79,6 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
             public string ConfirmPassword { get; set; }
         }
 
-
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
@@ -99,13 +89,12 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
                 user.FullName = Input.FullName;
                 user.Age = Input.Age;
-                
-
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
@@ -126,23 +115,24 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
                     await _userManager.AddClaimAsync(user, new Claim("Permission", "RequestBlood"));
                     await _userManager.AddClaimAsync(user, new Claim("Permission", "ViewMyRequests"));
                     await _userManager.AddClaimAsync(user, new Claim("Permission", "ViewMatchingDonors"));
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _userManager.AddToRoleAsync(user, "Patient");
+
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("/Account/RegisterConfirmation", new { area = "Identity", email = Input.Email, returnUrl = returnUrl });
                     }
                     else
-                    {    // role
-                        await _userManager.AddToRoleAsync(user, "Patient");
+                    {
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect("~/Patient/Dashboard");
-                        
                     }
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
@@ -161,8 +151,7 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account.Patient
             catch
             {
                 throw new InvalidOperationException($"Can't create an instance of '{nameof(User)}'. " +
-                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor.");
             }
         }
 

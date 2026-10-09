@@ -22,9 +22,9 @@
                     <input type="hidden" name="requestId" value="@item.DonationId" />
                     <button type="submit" class="btn btn-sm btn-warning">Approve</button>
                 </form>
-                <a asp-controller="Admin" asp-action="ViewSpecificDonation"
+                @* <a asp-controller="Admin" asp-action="ViewSpecificDonation"
                    asp-route-id="@item.DonationId"
-                   class="btn btn-sm btn-secondary text-white">View</a>
+                   class="btn btn-sm btn-secondary text-white">View</a> *@
                 <form asp-action="RejectDonation" asp-controller="Admin" method="post" class="d-inline">
                     <input type="hidden" name="requestId" value="@item.DonationId" />
                     <button type="submit" class="btn btn-sm btn-danger">Reject</button>
@@ -38,6 +38,6 @@
 else
 {
     <tr>
-        <td colspan="5" class="text-center text-muted">No donation requests found</td>
+        <td colspan="5" class="text-center text-light">No donation requests found</td>
     </tr>
 }

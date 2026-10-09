@@ -1,51 +1,87 @@
 ﻿@model List<BloodDonationManagementSystem.Models.BloodRequest>
-<tbody>
-    @if (Model != null && Model.Any())
-    {
-        int count = 1;
-        foreach (var r in Model)
-        {
-            <tr>
-                <td>@count</td>
-                <td>@r.PatientName</td>
-                <td>@r.BloodGroup</td>
-                <td>@r.Reason</td>
-                <td>@r.UnitsRequired</td>
-                <td>@r.Urgency</td>
-                <td>
-                    <span class="badge
-                  @(r.Status == "Pending" ? "bg-warning text-dark" :
-      r.Status == "Approved" ? "bg-success" : r.Status == "Rejected" ? "bg-danger" : "bg-secondary")">
-                  @r.Status
-  </span>
-        </td>
-        <td>
-            <form asp-action="ApproveBloodRequest" asp-controller="Admin" method="post" class="d-inline">
-                <input type="hidden" name="requestId" value="@r.BloodRequestId" />
-                <button class="btn btn-secondary btn-sm">Approve</button>
-            </form>
 
-                    <form asp-action="RejectBloodRequest" asp-controller="Admin" method="post" class="d-inline">
+@if (Model != null && Model.Any())
+{
+    int count = 1;
+    foreach (var r in Model)
+    {
+        <tr>
+            <td class="fw-semibold text-secondary">@count</td>
+            <td class="fw-semibold">@r.PatientName</td>
+            <td>
+                <span class="badge bg-danger bg-opacity-20 text-light border border-danger border-opacity-25 px-2 py-1">
+                    @r.BloodGroup
+                </span>
+            </td>
+            <td class="text-secondary small">@r.Reason</td>
+            <td>
+                <span class="fw-bold text-light">@r.UnitsRequired</span>
+                <span class="text-secondary small">unit(s)</span>
+            </td>
+            <td>
+                @if (r.Urgency?.ToLower() == "urgent" || r.Urgency?.ToLower() == "critical")
+                {
+                    <span class="badge bg-danger text-light px-2 py-1">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i> @r.Urgency
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary bg-opacity-20 text-light border border-secondary border-opacity-25 px-2 py-1">
+                        @r.Urgency
+                    </span>
+                }
+            </td>
+            <td>
+                @if (r.Status == "Approved")
+                {
+                    <span class="badge bg-success bg-opacity-20 text-light border border-success border-opacity-25 px-3 py-1">
+                        <i class="bi bi-check-circle-fill me-1"></i> Approved
+                    </span>
+                }
+                else if (r.Status == "Rejected")
+                {
+                    <span class="badge bg-danger bg-opacity-20 text-light border border-danger border-opacity-25 px-3 py-1">
+                        <i class="bi bi-x-circle-fill me-1"></i> Rejected
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-warning bg-opacity-20 text-light border border-warning border-opacity-25 px-3 py-1">
+                        <i class="bi bi-clock-history me-1"></i> Pending
+                    </span>
+                }
+            </td>
+            <td>
+                <div class="d-inline-flex gap-2">
+                    <form asp-action="ApproveBloodRequest" asp-controller="Admin" method="post" class="d-inline">
                         <input type="hidden" name="requestId" value="@r.BloodRequestId" />
-                        <button class="btn btn-sm" style="color:white; background: linear-gradient(135deg, #7a0c1a, #b11226);
-        ">
-                            Reject
+                        <button type="submit" class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-1">
+                            <i class="bi bi-check-lg"></i> Approve
                         </button>
                     </form>
 
-                    @* <a asp-action="ViewRequest" asp-route-id="@r.BloodRequestId"
-                       class="btn btn-info btn-sm">View</a> *@
-                </td>
-            </tr>
-        count++;
-        }
-    }
-    else
-    {
-        <tr>
-            <td colspan="8" class="text-center text-muted ">
-                No blood requests found
+                    <form asp-action="RejectBloodRequest" asp-controller="Admin" method="post" class="d-inline">
+                        <input type="hidden" name="requestId" value="@r.BloodRequestId" />
+                        <button type="submit" class="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1">
+                            <i class="bi bi-x-lg"></i> Reject
+                        </button>
+                    </form>
+                </div>
             </td>
         </tr>
+        count++;
     }
-</tbody>
+}
+else
+{
+    <tr>
+        <td colspan="8" class="text-center py-5">
+            <div class="d-flex flex-column align-items-center justify-content-center my-3">
+       
+                <h6 class="fw-semibold text-light mb-1">No Blood Requests Found</h6>
+                <p class="text-secondary small mb-0">There are currently no blood requests matching your search or filter criteria.</p>
+            </div>
+        </td>
+    </tr>
+}

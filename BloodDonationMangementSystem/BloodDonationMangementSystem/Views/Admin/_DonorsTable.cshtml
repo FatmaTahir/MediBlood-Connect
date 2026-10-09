@@ -1,38 +1,47 @@
 ﻿@model List<BloodDonationManagementSystem.Models.User>
-<tbody>
-    @if (Model != null && Model.Any())
-    {
-        int count = 1;
 
-        foreach (var donor in Model)
-        {
-            <tr>
-                <td>@count</td>
-                <td>@donor.FullName</td>
-                <td>@donor.Age</td>
-                <td>@donor.BloodGroup</td>
-                <td>@donor.Contact</td>
-                <td>
-                    @if (donor.Availability)
-                    {
-                        <span class="badge bg-secondary">Available</span>
-                    }
-                    else
-                    {
-                        <span class="badge " style="color:white; background: linear-gradient(135deg, #7a0c1a, #b11226);
-            ">Not Available</span>
-                    }
-                </td>
-               
-            </tr>
-
-            count++;
-        }
-    }
-    else
+@if (Model != null && Model.Any())
+{
+    int count = 1;
+    foreach (var donor in Model)
     {
         <tr>
-            <td colspan="7" class="text-center text-danger">No donors found</td>
+            <td class="fw-semibold text-secondary">@count</td>
+            <td class="fw-semibold text-light">@donor.FullName</td>
+            <td>@donor.Age</td>
+            <td>
+                <span class="badge bg-danger bg-opacity-20 text-light border border-danger border-opacity-25 px-2 py-1">
+                    @donor.BloodGroup
+                </span>
+            </td>
+            <td class="text-secondary">@donor.Contact</td>
+            <td>
+                @if (donor.Availability)
+                {
+                    <span class="badge bg-success bg-opacity-20 text-light border border-success border-opacity-25 px-3 py-1">
+                        <i class="bi bi-check-circle-fill me-1"></i> Available
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-danger bg-opacity-20 text-light border border-danger border-opacity-25 px-3 py-1">
+                        <i class="bi bi-x-circle-fill me-1"></i> Not Available
+                    </span>
+                }
+            </td>
         </tr>
+        count++;
     }
-</tbody>
+}
+else
+{
+    <tr>
+        <td colspan="6" class="text-center py-5">
+            <div class="d-flex flex-column align-items-center justify-content-center my-3">
+                
+                <h6 class="fw-semibold text-light mb-1">No Donors Found</h6>
+                <p class="text-light small mb-0">No registered donors match your current filter criteria.</p>
+            </div>
+        </td>
+    </tr>
+}

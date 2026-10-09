@@ -92,10 +92,6 @@ namespace BloodDonationManagementSystem.Areas.Identity.Pages.Account
             public bool Availability { get; set; }
 
             [Required(ErrorMessage = "This field is required")]
-            public DateOnly LastDonationDate { get; set; }
-
-
-            [Required(ErrorMessage = "This field is required")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
