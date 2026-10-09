@@ -1,4 +1,4 @@
-# 🩸 MediBlood Connect – Full Stack Blood Donation & Management System
+# 🩸MediBlood Connect – Full Stack Blood Donation & Management System
 
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-.NET%208-purple?logo=dotnet)
 ![Azure](https://img.shields.io/badge/Azure-App%20Service-blue?logo=microsoftazure)
