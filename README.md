@@ -1,125 +1,50 @@
-# Medi-Blood Connect 
-A modern **ASP.NET MVC web application** developed to streamline the blood donation process by connecting **Blood Donors and Patients ** on one platform. The system helps manage blood requests, donation requests, donor availability, stock alerts, and request approvals efficiently.
+# MediBlood Connect 🩸
+
+**MediBlood Connect** is a full-stack ASP.NET Core MVC application built to streamline blood donation workflows, enable real-time matching between patients and active donors, and manage blood requests efficiently.
 
 ---
 
-##  Project Overview
-
-The **Blood Donation Management System** is designed to reduce delays in blood availability during emergencies. It provides a secure and user-friendly environment where:
-
-- **Patients** can request blood easily.
-- **Donors** can manage their profile and availability.
-- **Admins** can monitor requests, donors, and blood stock.
+## 🚀 Live Demo
+- **App URL:** [https://medibloodconnect-acafg2hrgjakbsfz.swedencentral-01.azurewebsites.net](https://medibloodconnect-acafg2hrgjakbsfz.swedencentral-01.azurewebsites.net)
+- **Deployment Platform:** Azure App Service (Sweden Central)
+- **Database Engine:** Azure SQL Database (`MediBlooddb`)
 
 ---
 
-##  Technologies Used
+## 🛠️ Tech Stack
 
-### Backend
-- ASP.NET Core MVC  
-- C#  
-- Dapper 
-
-### Frontend
-- Bootstrap  
-- HTML5  
-- CSS3  
-- JavaScript  
-- AJAX  
-
-### Authentication & Security
-- ASP.NET Identity  
-- Policy-Based Authorization
-- Role-Based Authorization
-
-### Real-Time Features
-- SignalR  
-
-### Testing
-- Integration Testing  
-
-### Database
-- SQL Server  
+- **Backend:** C# / .NET 8.0 ASP.NET Core MVC
+- **Authentication & Security:** ASP.NET Core Identity (Role-based Authorization)
+- **Data Access Layer:** 
+  - **Entity Framework Core:** Identity Schema, Migrations, and Relational Mapping
+  - **Dapper:** High-performance direct SQL queries for Donor, Patient, and Admin Repositories
+- **Database:** Azure SQL Database / Microsoft SQL Server
+- **Frontend:** Razor Views, HTML5, CSS3, JavaScript, Bootstrap
 
 ---
 
-##  Key Features
+## ✨ Features
+
+### 👤 Donor Module
+- Register as an active donor with blood group and contact details.
+- Toggle availability status (`Available` / `Unavailable`).
+- Track and respond to blood donation requests.
+
+### 🏥 Patient Module
+- Submit urgent blood requests specifying units required, urgency level, and hospital details.
+- Search and filter active donors matching requested blood groups.
+- Track status of submitted requests (`Pending`, `Approved`, `Rejected`).
+
+### 🛡️ Admin Dashboard
+- Comprehensive metrics overview (Total Donors, Active Requests, Approved Requests).
+- Filter and search donation requests by blood group and status.
+- Single-click approval/rejection workflows for donation and blood requests.
 
 ---
 
-##  Donor Module
+## ⚙️ Local Development Setup
 
-Registered donors can:
-
-- Login securely
-- Edit profile
-- Update contact details
-- Change availability status
-- Submit donation request
-- View donation request status
-  
-
----
-
-##  Patient Module
-
-Patients can:
-
-- Register/Login
-- Submit blood requests
-- Enter required units
-- Select request emergency status from dropdown
-- View request approval status
-- After approval, view available donors
-- Access donor contact details
-
----
-
-##  Admin Module
-
-Admin has complete control to:
-
-- Approve blood requests
-- Delete requests
-- View all blood requests
-- View donation requests
-- Filter requests by blood type
-- View donors by:
-  - Available
-  - Not Available
-- Monitor low blood stock alerts
-
----
-
-##  Advanced Features
-
-###  AJAX Integration
-Used for faster page updates without full reloads.
-
-###  SignalR
-Used for real-time notifications and instant updates.
-
-###  Identity + Policy Authorization
-Secure authentication with role-based access control.
-
-###  Integration Tests
-Includes testing project for validating system functionality.
-
----
-
-## 📂 Project Structure
-
-```bash
-BloodDonationManagementSystem/
-│── Controllers/
-│── Models/
-│── Views/
-│── Services/
-│── Repositories/
-│── Interfaces/
-│── Hubs/
-│── Migrations/
-│── Areas/Identity/
-│── wwwroot/
-│── Tests/
-└── README.md
+1. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/MediBlood-Connect.git](https://github.com/YOUR_USERNAME/MediBlood-Connect.git)
+   cd MediBlood-Connect
