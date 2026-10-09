@@ -1,4 +1,6 @@
-﻿using BloodDonationManagementSystem.Interfaces;
+﻿using System;
+using System.Threading.Tasks;
+using BloodDonationManagementSystem.Interfaces;
 using BloodDonationManagementSystem.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -63,7 +65,6 @@ namespace BloodDonationManagementSystem.Controllers
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
 
-            // Bind the logged-in user ID to prevent parameter tampering
             donor.Id = user.Id;
 
             if (!ModelState.IsValid)
@@ -84,8 +85,8 @@ namespace BloodDonationManagementSystem.Controllers
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
             }
 
-            var request = _dr.GetDonationRequest(userId);
-            return View(request);
+            var requests = _dr.GetDonationRequest(userId);
+            return View(requests);
         }
 
         [HttpGet]
@@ -103,7 +104,13 @@ namespace BloodDonationManagementSystem.Controllers
                 return NotFound("Donor profile not found.");
             }
 
-            return View(donor);
+            var model = new DonationRequest
+            {
+                FullName = donor.FullName,
+                BloodGroup = donor.BloodGroup
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -118,14 +125,22 @@ namespace BloodDonationManagementSystem.Controllers
 
             if (!ModelState.IsValid)
             {
+                // Re-populate profile data if model validation fails
+                var donor = _dr.GetDonorById(userId);
+                if (donor != null)
+                {
+                    request.FullName = donor.FullName;
+                    request.BloodGroup = donor.BloodGroup;
+                }
                 return View(request);
             }
 
             request.Status = "pending";
             request.RequestDate = DateTime.Now;
+
             _dr.AddDonationRequest(request, userId);
 
-            return RedirectToAction(nameof(DonorDashboard));
+            return RedirectToAction(nameof(ProfileStatus));
         }
 
         [HttpPost]

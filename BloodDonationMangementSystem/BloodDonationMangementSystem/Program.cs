@@ -29,7 +29,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
 
-// Services & Frameworks
+// Framework Services
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
@@ -52,6 +52,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim("Permission", "ViewMyRequests");
         policy.RequireClaim("Permission", "ViewMatchingDonors");
     });
+
     options.AddPolicy("DonorAccess", policy =>
     {
         policy.RequireRole("Donor");
@@ -59,6 +60,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim("Permission", "UpdateProfile");
         policy.RequireClaim("Permission", "RequestDonation");
     });
+
     options.AddPolicy("AdminAccess", policy =>
     {
         policy.RequireRole("Admin");
@@ -78,10 +80,17 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
-// Seed Roles cleanly within a disposable scope
+// Automatically Apply Pending EF Core Migrations & Seed Roles cleanly
 using (var scope = app.Services.CreateScope())
 {
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var services = scope.ServiceProvider;
+
+    // 1. Create database schema & apply all pending migrations (Creates AspNetRoles, AspNetUsers, etc.)
+    var dbContext = services.GetRequiredService<BloodDonationManagementSystemContext>();
+    await dbContext.Database.MigrateAsync();
+
+    // 2. Seed initial Identity roles
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
     await RoleSeeder.SeedRoles(roleManager);
 }
 

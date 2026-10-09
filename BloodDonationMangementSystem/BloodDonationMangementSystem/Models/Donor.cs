@@ -18,3 +18,5 @@ namespace BloodDonationManagementSystem.Models
         public bool Availability { get; set; }
     }
 }
+﻿
+       

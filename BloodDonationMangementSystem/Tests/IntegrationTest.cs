@@ -13,7 +13,7 @@ namespace Tests
 
         public IntegrationTest()
         {
-            // Build configuration so DonorRepository can access appsettings or memory connection string
+            // Build configuration so DonorRepository can access connection string
             _configuration = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string?>
                 {
@@ -25,12 +25,14 @@ namespace Tests
         [Fact]
         public void GetDonorById_ReturnsDonor_FromDatabase()
         {
-            // Pass the configuration into the repository constructor
+            // Arrange
             var repo = new DonorRepository(_configuration);
             string donorId = "01595e00-6aee-4ce3-a7a2-02b99e284e6a";
 
+            // Act
             var donor = repo.GetDonorById(donorId);
 
+            // Assert
             Assert.NotNull(donor);
             Assert.Equal(donorId, donor.Id);
         }
@@ -38,6 +40,7 @@ namespace Tests
         [Fact]
         public void UpdateDonor_UpdatesData_InDatabase()
         {
+            // Arrange
             var repo = new DonorRepository(_configuration);
             string expectedName = "Tahir";
             string expectedBloodGroup = "B+";
@@ -53,12 +56,15 @@ namespace Tests
                 Availability = true
             };
 
+            // Act
             repo.UpdateDonor(donor);
 
+            // Fetch again
             var updatedDonor = repo.GetDonorById(donor.Id);
 
+            // Assert
             Assert.NotNull(updatedDonor);
-            Assert.Equal(expectedName, updatedDonor.FullName); // Matched with "Tahir"
+            Assert.Equal(expectedName, updatedDonor.FullName);
             Assert.Equal(expectedBloodGroup, updatedDonor.BloodGroup);
         }
     }

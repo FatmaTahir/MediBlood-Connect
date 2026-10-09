@@ -1,4 +1,6 @@
-﻿using BloodDonationManagementSystem.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using BloodDonationManagementSystem.Interfaces;
 using BloodDonationManagementSystem.Models;
 using Dapper;
 using Microsoft.Data.SqlClient;
@@ -13,8 +15,8 @@ namespace BloodDonationMangementSystem.Repositories
         // Inject IConfiguration to pull connection string from appsettings.json
         public DonorRepository(IConfiguration configuration)
         {
-            _constr = configuration.GetConnectionString("DefaultConnection")
-                      ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            _constr = configuration.GetConnectionString("BloodDonationManagementSystemContextConnection")
+               ?? throw new InvalidOperationException("Connection string 'BloodDonationManagementSystemContextConnection' not found.");
         }
 
         // Get donor by id
@@ -52,7 +54,7 @@ namespace BloodDonationMangementSystem.Repositories
             dr.DonorId = id;
             dr.UserId = id;
 
-            // Fallback for RequestDate
+            // Fallback for RequestDate if unassigned
             if (dr.RequestDate == default)
             {
                 dr.RequestDate = DateTime.Now;
@@ -60,22 +62,25 @@ namespace BloodDonationMangementSystem.Repositories
 
             using (var con = new SqlConnection(_constr))
             {
-                // Include UserId in the column list and values clause
+                // Includes non-nullable UserId and RequestDate columns
                 string query = @"INSERT INTO DonationRequest (FullName, BloodGroup, DonorId, UserId, Reason, Status, RequestDate) 
-                         VALUES (@FullName, @BloodGroup, @DonorId, @UserId, @Reason, @Status, @RequestDate)";
+                                 VALUES (@FullName, @BloodGroup, @DonorId, @UserId, @Reason, @Status, @RequestDate)";
 
                 int result = con.Execute(query, dr);
                 Console.WriteLine("Number of rows inserted: " + result);
             }
         }
 
-        // Get donation request by donor ID
-        public DonationRequest GetDonationRequest(string id)
+        // Get all donation requests by donor ID (Newest first)
+        public IEnumerable<DonationRequest> GetDonationRequest(string id)
         {
             using (var con = new SqlConnection(_constr))
             {
-                string query = "SELECT * FROM DonationRequest WHERE DonorId = @DonorId";
-                return con.QuerySingleOrDefault<DonationRequest>(query, new { DonorId = id });
+                string query = @"SELECT * FROM DonationRequest 
+                                 WHERE DonorId = @DonorId 
+                                 ORDER BY RequestDate DESC";
+
+                return con.Query<DonationRequest>(query, new { DonorId = id });
             }
         }
     }

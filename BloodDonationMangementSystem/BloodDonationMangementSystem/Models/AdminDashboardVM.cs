@@ -4,7 +4,9 @@
     {
         public int TotalDonoationRequests { get; set; }
         public int TotalBloodRequests { get; set; }
+
         public int TotalDonors { get; set; }
+       // public int DonationsCompleted { get; set; }
 
     }
 

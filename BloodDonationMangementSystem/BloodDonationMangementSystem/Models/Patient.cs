@@ -17,3 +17,4 @@ namespace BloodDonationManagementSystem.Models
         public string? HospitalName { get; set; }
     }
 }
+﻿

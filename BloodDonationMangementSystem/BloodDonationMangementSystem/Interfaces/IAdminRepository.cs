@@ -11,6 +11,7 @@ namespace BloodDonationManagementSystem.Interfaces
         public int GetTotalDonationRequests();
         public int GetTotalBloodRequests();
         public int GetTotalDonors();
+
         public void UpdateDonationRequestStatus(int requestId);
         public string GetDonorIdByRequest(int requestId);
         public void ApproveBloodRequest(int requestId);

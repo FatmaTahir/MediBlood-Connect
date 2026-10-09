@@ -8,27 +8,111 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Login - MediBlood Connect</title>
+    <title>Admin Login - MediBloodConnect</title>
 
-    <!-- Bootstrap CSS -->
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Site CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
-</head>
-<body class="bg-light">
 
-    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+    <style>
+        :root {
+            --bg-dark: #121418;
+            --surface-dark: #1a1d24;
+            --surface-hover: #222630;
+            --border-color: #2a2f3d;
+            --accent-red: #e63946;
+            --text-main: #f8f9fa;
+            --text-muted: #8e95a5;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .login-card {
+            background-color: var(--surface-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        /* Floating Inputs Dark Theme */
+        .form-floating > .form-control {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+            .form-floating > .form-control:focus {
+                background-color: var(--bg-dark);
+                border-color: var(--accent-red);
+                color: var(--text-main);
+                box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+            }
+
+        .form-floating > label {
+            color: var(--text-muted);
+        }
+
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: var(--text-muted);
+        }
+
+        .brand-icon-box {
+            width: 48px;
+            height: 48px;
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-danger-custom {
+            background-color: var(--accent-red);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+
+            .btn-danger-custom:hover {
+                background-color: #d62839;
+                color: #ffffff;
+            }
+
+        .admin-badge-icon {
+            color: var(--accent-red);
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
         <div class="col-md-5 col-lg-4">
-            <div class="card shadow-lg border-0 rounded-4">
+            <div class="card login-card shadow-lg p-3">
                 <div class="card-body p-4">
 
+                    <!-- Header with Icon -->
                     <div class="text-center mb-4">
-                        <h3 class="fw-bold text-danger">Admin Login</h3>
-                        <p class="text-muted mb-0">Access administrative dashboard</p>
+                        <div class="brand-icon-box mb-3">
+                            <i class="bi bi-shield-check text-danger fs-4"></i>
+                        </div>
+                        <div class="admin-badge-icon fw-semibold mb-1">
+                            Management Portal
+                        </div>
+                        <h3 class="fw-bold text-light mb-1">Admin Login</h3>
+                        <p class="text-secondary small mb-0">Access administrative control center</p>
                     </div>
 
                     <form id="account" method="post" asp-route-returnUrl="@Model.ReturnUrl">
-                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3" role="alert"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3 p-2 rounded bg-danger bg-opacity-10 border border-danger border-opacity-25" role="alert"></div>
 
                         <!-- Email Field -->
                         <div class="form-floating mb-3">
@@ -41,7 +125,7 @@
                         </div>
 
                         <!-- Password Field -->
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-4">
                             <input asp-for="Input.Password"
                                    class="form-control"
                                    autocomplete="current-password"
@@ -53,8 +137,8 @@
                         <!-- Submit Button -->
                         <button id="login-submit"
                                 type="submit"
-                                class="btn btn-danger w-100 py-2 fw-semibold">
-                            Log in
+                                class="btn btn-danger-custom w-100 py-2 d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-box-arrow-in-right"></i> Log in
                         </button>
                     </form>
 
@@ -63,7 +147,7 @@
         </div>
     </div>
 
-    <!-- Included jQuery & Validation Scripts directly since Layout is set to null -->
+    <!-- Client-side scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <partial name="_ValidationScriptsPartial" />

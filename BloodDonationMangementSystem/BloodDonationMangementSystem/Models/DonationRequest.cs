@@ -17,3 +17,4 @@ namespace BloodDonationManagementSystem.Models
         public DateTime RequestDate { get; set; } = DateTime.Now;
     }
 }
+﻿

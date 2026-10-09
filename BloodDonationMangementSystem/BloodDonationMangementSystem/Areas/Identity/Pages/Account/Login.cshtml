@@ -10,102 +10,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - MediBlood Connect</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS & Icons -->
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Site CSS -->
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+
+    <style>
+        :root {
+            --bg-dark: #121418;
+            --surface-dark: #1a1d24;
+            --surface-hover: #222630;
+            --border-color: #2a2f3d;
+            --accent-red: #e63946;
+            --text-main: #f8f9fa;
+            --text-muted: #8e95a5;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .login-card {
+            background-color: var(--surface-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        /* Floating Inputs Dark Theme */
+        .form-floating > .form-control {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+            .form-floating > .form-control:focus {
+                background-color: var(--bg-dark);
+                border-color: var(--accent-red);
+                color: var(--text-main);
+                box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+            }
+
+        .form-floating > label {
+            color: var(--text-muted);
+        }
+
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: var(--text-muted);
+        }
+
+        /* Dark Theme Checkbox */
+        .form-check-input {
+            background-color: var(--bg-dark);
+            border-color: var(--border-color);
+        }
+
+            .form-check-input:checked {
+                background-color: var(--accent-red);
+                border-color: var(--accent-red);
+            }
+
+            .form-check-input:focus {
+                border-color: var(--accent-red);
+                box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+            }
+
+        .brand-icon-box {
+            width: 44px;
+            height: 44px;
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-danger-custom {
+            background-color: var(--accent-red);
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+
+            .btn-danger-custom:hover {
+                background-color: #d62839;
+                color: #ffffff;
+            }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-lg-4">
+<body>
 
-                <div class="card shadow-lg border-0">
-                    <div class="card-body p-4">
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+        <div class="col-md-5 col-lg-4">
 
-                        <h3 class="text-center text-danger fw-bold mb-2">
-                            Log In
-                        </h3>
-                        <p class="text-center text-muted mb-4">
-                            Access your MediBlood Connect account
-                        </p>
+            <div class="card login-card shadow-lg p-2">
+                <div class="card-body p-4">
 
-                        <form id="account" method="post" asp-route-returnUrl="@Model.ReturnUrl">
-
-                            <div asp-validation-summary="ModelOnly"
-                                 class="text-danger mb-3"
-                                 role="alert"></div>
-
-                            <!-- Email Field -->
-                            <div class="form-floating mb-3">
-                                <input asp-for="Input.Email"
-                                       class="form-control"
-                                       autocomplete="username"
-                                       aria-required="true"
-                                       placeholder="name@example.com" />
-                                <label asp-for="Input.Email" class="form-label">
-                                    Email Address
-                                </label>
-                                <span asp-validation-for="Input.Email"
-                                      class="text-danger"></span>
-                            </div>
-
-                            <!-- Password Field -->
-                            <div class="form-floating mb-3">
-                                <input asp-for="Input.Password"
-                                       class="form-control"
-                                       autocomplete="current-password"
-                                       aria-required="true"
-                                       placeholder="password" />
-                                <label asp-for="Input.Password" class="form-label">
-                                    Password
-                                </label>
-                                <span asp-validation-for="Input.Password"
-                                      class="text-danger"></span>
-                            </div>
-
-                            <!-- Remember Me Checkbox -->
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" asp-for="Input.RememberMe" />
-                                <label class="form-check-label" asp-for="Input.RememberMe">
-                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
-                                </label>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <button id="login-submit"
-                                    type="submit"
-                                    class="btn btn-danger w-100 py-2 fw-bold mb-3">
-                                Log In
-                            </button>
-
-                            <!-- Navigation Links -->
-                            <div class="text-center">
-                                <p class="mb-2">
-                                    <a asp-page="./ForgotPassword" class="text-secondary small">
-                                        Forgot your password?
-                                    </a>
-                                </p>
-                                <p class="mb-0">
-                                    <a asp-page="./Register"
-                                       asp-route-returnUrl="@Model.ReturnUrl"
-                                       class="text-danger fw-semibold">
-                                        Don't have an account? Register
-                                    </a>
-                                </p>
-                            </div>
-
-                        </form>
-
+                    <!-- Header with Icon -->
+                    <div class="text-center mb-4">
+                        <div class="brand-icon-box mb-3">
+                            <i class="bi bi-droplet-fill text-danger fs-5"></i>
+                        </div>
+                        <h4 class="fw-bold text-light mb-1">Log In</h4>
+                        <p class="text-secondary small mb-0">Access your MediBlood Connect account</p>
                     </div>
-                </div>
 
+                    <form id="account" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger small mb-3 p-2 rounded bg-danger bg-opacity-10 border border-danger border-opacity-25"
+                             role="alert"></div>
+
+                        <!-- Email Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email"
+                                   class="form-control"
+                                   autocomplete="username"
+                                   aria-required="true"
+                                   placeholder="name@example.com" />
+                            <label asp-for="Input.Email" class="form-label">Email Address</label>
+                            <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password"
+                                   class="form-control"
+                                   autocomplete="current-password"
+                                   aria-required="true"
+                                   placeholder="password" />
+                            <label asp-for="Input.Password" class="form-label">Password</label>
+                            <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Remember Me Checkbox -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            <label class="form-check-label text-secondary small" asp-for="Input.RememberMe">
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button id="login-submit"
+                                type="submit"
+                                class="btn btn-danger-custom w-100 py-2 d-flex align-items-center justify-content-center gap-2 mb-3">
+                            <i class="bi bi-box-arrow-in-right"></i> Log In
+                        </button>
+
+                        <!-- Navigation Links -->
+                        <div class="text-center small">
+                            <p class="mb-1">
+                                <a asp-page="./ForgotPassword" class="text-secondary text-decoration-none">
+                                    Forgot your password?
+                                </a>
+                            </p>
+                            <p class="mb-0">
+                                <span class="text-secondary">Don't have an account?</span>
+                                <a asp-page="./Register"
+                                   asp-route-returnUrl="@Model.ReturnUrl"
+                                   class="text-danger fw-semibold text-decoration-none ms-1">
+                                    Register
+                                </a>
+                            </p>
+                        </div>
+
+                    </form>
+
+                </div>
             </div>
+
         </div>
     </div>
 
-    <!-- Scripts rendered directly because Layout is null -->
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
 </body>
 </html>

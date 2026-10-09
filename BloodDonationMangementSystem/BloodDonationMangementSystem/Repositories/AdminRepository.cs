@@ -4,13 +4,19 @@ using BloodDonationManagementSystem.Models;
 using Dapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
-
+using Microsoft.Extensions.Configuration;
 
 namespace BloodDonationMangementSystem.Repositories
 {
-    public class AdminRepository :IAdminRepository
+    public class AdminRepository : IAdminRepository
     {
-        string constr = "Data Source=FATIMA\\SQLEXPRESS;Initial Catalog=MediBlooddb;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private readonly string constr;
+
+        public AdminRepository(IConfiguration configuration)
+        {
+            constr = configuration.GetConnectionString("BloodDonationManagementSystemContextConnection")
+               ?? throw new InvalidOperationException("Connection string 'BloodDonationManagementSystemContextConnection' not found.");
+        }
 
         //view blood reqs
         public List<BloodRequest> ViewBloodRequests(string bloodGroup, string status)
@@ -31,6 +37,7 @@ namespace BloodDonationMangementSystem.Repositories
                 return result.ToList();
             }
         }
+
         public List<DonationRequest> ViewDonationRequests(string bloodGroup, string status)
         {
             using (SqlConnection con = new SqlConnection(constr))
@@ -83,7 +90,6 @@ namespace BloodDonationMangementSystem.Repositories
             }
         }
 
-        // donors req count
         public int GetTotalDonationRequests()
         {
             using var con = new SqlConnection(constr);
@@ -91,6 +97,7 @@ namespace BloodDonationMangementSystem.Repositories
                 "SELECT COUNT(*) FROM DonationRequest"
             );
         }
+
         // blood req count
         public int GetTotalBloodRequests()
         {
@@ -99,6 +106,7 @@ namespace BloodDonationMangementSystem.Repositories
                 "SELECT COUNT(*) FROM BloodRequest"
             );
         }
+
         //total donors
         public int GetTotalDonors()
         {
@@ -117,7 +125,6 @@ namespace BloodDonationMangementSystem.Repositories
 
         public void UpdateDonationRequestStatus(int requestId)
         {
-       
             using (var con = new SqlConnection(constr))
             {
                 con.Open();
@@ -140,6 +147,7 @@ namespace BloodDonationMangementSystem.Repositories
                 return result != null ? result.ToString() : null;
             }
         }
+
         public void ApproveBloodRequest(int requestId)
         {
             using var con = new SqlConnection(constr);
@@ -165,8 +173,8 @@ namespace BloodDonationMangementSystem.Repositories
             return con.QueryFirstOrDefault<string>(
                 @"SELECT U.Id FROM BloodRequest BR JOIN AspNetUsers U ON BR.PatientEmail = U.Email WHERE BR.BloodRequestId = @Id", new { Id = requestId }
             );
-
         }
+
         public User GetDonorById(string id)
         {
             using (var con = new SqlConnection(constr))
@@ -175,14 +183,16 @@ namespace BloodDonationMangementSystem.Repositories
                 return con.QuerySingleOrDefault<User>(query, new { Id = id });
             }
         }
+
         public DonationRequest GetDonationById(int requestid)
         {
-            using(var con = new SqlConnection(constr))
+            using (var con = new SqlConnection(constr))
             {
                 string query = "Select * From DonationRequest where DonationId=@id";
                 return con.QuerySingleOrDefault<DonationRequest>(query, new { id = requestid });
             }
         }
+
         public void ApproveDonation(int requestId)
         {
             using var con = new SqlConnection(constr);
@@ -198,11 +208,7 @@ namespace BloodDonationMangementSystem.Repositories
             con.Execute(
                 "UPDATE DonationRequest SET Status = 'Rejected' WHERE DonationId = @Id",
                 new { Id = requestId }
-            );
+            ); 
         }
-
-
-
-
     }
 }

@@ -34,7 +34,9 @@ namespace BloodDonationMangementSystem.Controllers
             {
                 TotalDonoationRequests = _ar.GetTotalDonationRequests(),
                 TotalBloodRequests = _ar.GetTotalBloodRequests(),
+
                 TotalDonors = _ar.GetTotalDonors()
+                
             };
 
             return View(vm);

@@ -2,176 +2,302 @@
 @{
     Layout = null;
 }
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - MediBloodConnect</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f5f6f7;
-            font-family: 'Segoe UI', sans-serif;
+        :root {
+            --bg-dark: #121418;
+            --surface-dark: #1a1d24;
+            --surface-hover: #222630;
+            --border-color: #2a2f3d;
+            --accent-red: #e63946;
+            --accent-amber: #f77f00;
+            --accent-blue: #4cc9f0;
+            --text-main: #f8f9fa;
+            --text-muted: #8e95a5;
         }
 
-        .dashboard-title {
-            color: black;
+        html, body {
+            height: 100vh;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        .dashboard-subtitle {
-            color: #6c757d;
+        /* Top Navbar */
+        .navbar-custom {
+            background-color: var(--surface-dark);
+            border-bottom: 1px solid var(--border-color);
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
         }
 
-        .theme-card {
-            border: none;
-            border-radius: 12px;
-            color: #fff;
+        .admin-badge {
+            background-color: rgba(230, 57, 70, 0.15);
+            color: var(--accent-red);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
         }
 
-        .bg-blood {
-            background: linear-gradient(135deg, #b11226, #e63946);
+        /* Unified Stats Row */
+        .stats-bar {
+            background-color: var(--surface-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 20px;
         }
 
-        .bg-dark-red {
-            background: linear-gradient(135deg, #7a0c1a, #b11226);
+        .stat-item {
+            padding: 4px 16px;
         }
 
-        .bg-muted-dark {
-            background: linear-gradient(135deg, #343a40, #495057);
-        }
-
-        .theme-btn-primary {
-            background-color: #b11226;
-            border: none;
-        }
-
-            .theme-btn-primary:hover {
-                background-color: #8f0f1f;
+            .stat-item:not(:last-child) {
+                border-right: 1px solid var(--border-color);
             }
 
-        .theme-btn-outline {
-            border: 1px solid #b11226;
-            color: #b11226;
-        }
-
-            .theme-btn-outline:hover {
-                background-color: #b11226;
-                color: #fff;
-            }
-
-        .low-stock-card {
-            background-color: #fff3cd;
-            border-left: 5px solid #b11226;
+        .stat-icon-sm {
+            width: 38px;
+            height: 38px;
             border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .icon-red {
+            background-color: rgba(230, 57, 70, 0.12);
+            color: var(--accent-red);
+        }
+
+        .icon-amber {
+            background-color: rgba(247, 127, 0, 0.12);
+            color: var(--accent-amber);
+        }
+
+        .icon-blue {
+            background-color: rgba(76, 201, 240, 0.12);
+            color: var(--accent-blue);
+        }
+
+        /* Compact Action Cards */
+        .action-card {
+            background-color: var(--surface-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 18px;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+            .action-card:hover {
+                background-color: var(--surface-hover);
+                border-color: rgba(230, 57, 70, 0.4);
+                color: var(--text-main);
+                transform: translateY(-1px);
+            }
+
+        /* Section Headings */
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
         }
     </style>
-
 </head>
 
-<body class="m-0 p-0 " >
+<body class="d-flex flex-column h-100">
+    <!-- Top Navigation Header -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark  box-shadow mb-1" style="height:75px;">
-            <div class="container-fluid">
-                <div class="navbar-brand fw-bold">
-                    <i class="bi bi-droplet-fill text-danger fs-3 me-5">
-                        <span class="text-light ">Medi</span><span class="text-danger fs-3">Blood</span><span class="text-light fs-3">Connect</span>
-
-                    </i>
-
-                </div>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light  me-5   ms-5" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">About</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">How It Works</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light me-5 " asp-area="" asp-controller="Home" asp-action="">Contact Us</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <a href="#" class="btn btn-danger  me-5 " >
-                   
-                    Admin Login
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom px-3">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand fw-bold d-flex align-items-center" asp-controller="Admin" asp-action="Dashboard">
+                    <i class="bi bi-droplet-fill text-danger fs-5 me-2"></i>
+                    <span class="text-light fs-6">Medi</span>
+                    <span class="text-danger fs-6">Blood</span>
+                    <span class="text-light fs-6">Connect</span>
                 </a>
 
+                <button class="navbar-toggler py-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Centered Admin Navigation Links -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 small">
+                        <li class="nav-item">
+                            <a class="nav-link text-light opacity-75 py-1 px-2" asp-controller="Admin" asp-action="Dashboard">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light opacity-75 py-1 px-2" asp-controller="Admin" asp-action="DonationRequests">Donations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light opacity-75 py-1 px-2" asp-controller="Admin" asp-action="ViewBloodRequests">Blood Requests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light opacity-75 py-1 px-2" asp-controller="Admin" asp-action="ViewDonors">Donors</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Administrator Dropdown -->
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="dropdown">
+                            <button class="admin-badge btn border-0 d-flex align-items-center gap-2 dropdown-toggle py-1 px-3"
+                                    type="button"
+                                    id="adminDropdown"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style="cursor: pointer;">
+                                <i class="bi bi-shield-check"></i> Administrator
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow border-0 mt-2"
+                                aria-labelledby="adminDropdown"
+                                style="background-color: var(--surface-dark, #1a1d24); border: 1px solid var(--border-color, #2a2f3d) !important;">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center gap-2 text-danger small py-2 fw-semibold"
+                                       asp-area="Identity"
+                                       asp-page="/Account/Admin/Login">
+                                        <i class="bi bi-box-arrow-right fs-6"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
-    <div class="d-flex m-0 p-0">
-
-        <div class="flex-grow-1 p-4">
-            <h2 class="fw-bold dashboard-title">Admin Dashboard</h2>
-            <p class="dashboard-subtitle">
-                From here you can manage donation requests, blood requests, and donors.
-            </p>
-
-            <div class="row mt-4">
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-lg rounded-3 text-white bg-blood">
-                        <div class="card-body text-center py-4">
-                            <h4 class="card-title fw-bold mb-3">Donation Requests</h4>
-                            <h4 class="mt-3">@Model.TotalDonoationRequests</h4>
-                        </div>
-                    </div>
+    <div class="container-fluid px-4 py-3 flex-grow-1 d-flex flex-column justify-content-between">
+        <div>
+            <!-- Centered Header Banner -->
+            <div class="text-center mb-4">
+                <div class="d-inline-flex align-items-center justify-content-center gap-2 text-danger fw-semibold small text-uppercase mb-1" style="letter-spacing: 1px;">
+                    <i class="bi bi-heart-pulse-fill"></i> MANAGEMENT PORTAL
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-lg rounded-3 text-white bg-dark-red">
-                        <div class="card-body text-center py-4">
-                            <h4 class="card-title fw-bold mb-3">Blood Requests</h4>
-                            <h4 class="mt-3">@Model.TotalBloodRequests</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-lg rounded-3 text-white bg-muted-dark">
-                        <div class="card-body text-center py-4">
-                            <h4 class="card-title fw-bold mb-3">Registered Donors</h4>
-                            <h4 class="mt-3">@Model.TotalDonors</h4>
-                        </div>
-                    </div>
-                </div>
-
+                <p class="text-secondary small mb-0" style="font-size: 0.85rem;">
+                    Overview of active donation requests, inventory alerts, and donor metrics.
+                </p>
             </div>
 
-            <div class="mb-4 ">
-                <h5 class="fw-bold">Quick Actions</h5>
-                <a class="btn theme-btn-outline me-2" asp-controller="Admin" asp-action="DonationRequests">View Donation Requests</a>
-                <a class="btn theme-btn-outline me-2" asp-controller="Admin" asp-action="ViewBloodRequests">View Blood Request</a>
-                <a class="btn theme-btn-outline" asp-controller="Admin" asp-action="ViewDonors">View Donors</a>
-            </div>
+            <!-- Single Row Merged KPI Metrics (Without Badges) -->
+            <div class="stats-bar mb-4">
+                <div class="row align-items-center g-0">
+                    <!-- Donation Requests Item -->
+                    <div class="col-md-4 stat-item">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon-sm icon-red me-3">
+                                <i class="bi bi-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <div class="text-secondary text-uppercase fw-semibold section-label">Donation Requests</div>
+                                <div class="h4 fw-bold mb-0 text-light">@Model.TotalDonoationRequests</div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="mb-4">
-                <h5 class="fw-bold">Low Stock Alert</h5>
-                <div class="d-flex ">
-                    <div class="card bg-warning text-dark me-3 mb-3 p-3" style="width:150px;">
-                        <h6 class="fw-bold">A+</h6>
-                        <p class="m-0">Only 3 units</p>
+                    <!-- Blood Requests Item -->
+                    <div class="col-md-4 stat-item">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon-sm icon-amber me-3">
+                                <i class="bi bi-capsule"></i>
+                            </div>
+                            <div>
+                                <div class="text-secondary text-uppercase fw-semibold section-label">Blood Requests</div>
+                                <div class="h4 fw-bold mb-0 text-light">@Model.TotalBloodRequests</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card bg-warning text-dark me-3 mb-3 p-3" style="width:150px;">
-                        <h6 class="fw-bold">O-</h6>
-                        <p class="m-0">Only 1 unit</p>
-                    </div>
-                    <div class="card bg-warning text-dark me-3 mb-3 p-3" style="width:150px;">
-                        <h6 class="fw-bold">B+</h6>
-                        <p class="m-0">Only 2 units</p>
+
+                    <!-- Registered Donors Item -->
+                    <div class="col-md-4 stat-item">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon-sm icon-blue me-3">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <div>
+                                <div class="text-secondary text-uppercase fw-semibold section-label">Registered Donors</div>
+                                <div class="h4 fw-bold mb-0 text-light">@Model.TotalDonors</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Quick Actions Navigation Section -->
+            <div class="mt-4 mb-3">
+                <h6 class="text-uppercase fw-bold text-secondary mb-3 section-label">
+                    Quick Actions
+                </h6>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <a asp-controller="Admin" asp-action="DonationRequests" class="action-card">
+                            <div class="d-flex align-items-center">
+                                <div class="stat-icon-sm icon-red me-3">
+                                    <i class="bi bi-file-earmark-medical"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold small">Donation Applications</div>
+                                    <div class="text-secondary" style="font-size: 0.75rem;">Review & process donor forms</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right text-secondary"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a asp-controller="Admin" asp-action="ViewBloodRequests" class="action-card">
+                            <div class="d-flex align-items-center">
+                                <div class="stat-icon-sm icon-amber me-3">
+                                    <i class="bi bi-card-checklist"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold small">Blood Requests</div>
+                                    <div class="text-secondary" style="font-size: 0.75rem;">Manage hospital & patient orders</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right text-secondary"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a asp-controller="Admin" asp-action="ViewDonors" class="action-card">
+                            <div class="d-flex align-items-center">
+                                <div class="stat-icon-sm icon-blue me-3">
+                                    <i class="bi bi-person-lines-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold small">Donor Directory</div>
+                                    <div class="text-secondary" style="font-size: 0.75rem;">View registered donors & availability</div>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- Inventory Alerts Section (Bottom Compact Placeholder) -->
+        <div class="mb-2">
+            <!-- Place compact inventory alerts or footer elements here if needed -->
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
